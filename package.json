@@ -44,7 +44,8 @@
     "read-pkg-up": "^4.0.0",
     "resolve-from": "^4.0.0",
     "semver": "^5.4.1",
-    "yargs": "^11.0.0"
+    "yargs": "^11.0.0",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "ava": "^0.25.0",
@@ -124,10 +125,13 @@
     "lint": "xo",
     "pretest": "npm run lint",
     "semantic-release": "./bin/semantic-release.js",
-    "test": "nyc ava -v"
+    "test": "nyc ava -v",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "xo": {
     "prettier": true,
     "space": true
-  }
+  },
+  "snyk": true
 }
